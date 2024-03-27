@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -52,28 +51,21 @@ body {
 
   background-color: #f3f4f6;
 
-  font-family: 'Josefin Sans', sans-serif;
-  color: black;
+  font-family: 'Roboto Slab', serif;
+  color: #1f2937;
+
+  ::selection {
+    background-color: #6fded6;
+  }
 }
 
 .app {
   display: grid;
-  grid-template: minmax(8rem, auto) 1fr / 1fr;
+  grid-template: minmax(10rem, auto) 1fr / 1fr;
   grid-template-areas:
     'header'
     'main';
   min-height: 100vh;
-}
-
-.header {
-  grid-area: header;
-  display: grid;
-  grid-template: 1fr / repeat(2, 1fr);
-  justify-items: center;
-  align-items: center;
-  min-width: 100vw;
-
-  background-color: blue;
 }
 
 .main {
@@ -83,14 +75,12 @@ body {
 }
 
 .sidebar {
-  background-color: yellow;
+  padding: 1rem;
 }
 
 .content {
   grid-column: 2 / 6;
   padding: 3rem;
-
-  background-color: orange;
 }
 
 .products {

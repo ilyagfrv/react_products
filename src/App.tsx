@@ -1,13 +1,12 @@
 import './App.css'
+
+import { Header } from 'components'
 import image from './assets/icons/icon.svg'
 
 export default function App() {
   return (
     <div className='app'>
-      <header className='header'>
-        <h1>Grocery store</h1>
-        <a href='#'>Cart</a>
-      </header>
+      <Header />
 
       <main className='main'>
         <aside className='sidebar'>

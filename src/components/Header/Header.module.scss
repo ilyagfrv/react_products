@@ -1,0 +1,53 @@
+.header {
+  grid-area: header;
+  display: grid;
+  grid-template: 1fr / repeat(2, 1fr);
+  justify-items: center;
+  align-items: center;
+  min-width: 100vw;
+}
+
+.title {
+  display: inline-block;
+  margin-right: 1rem;
+
+  font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: 0.1rem;
+}
+
+.lemon {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.favorite,
+.cart {
+  a {
+    display: grid;
+    place-items: center;
+
+    font-size: 3.5rem;
+
+    user-select: none;
+    transition: color 0.1s ease;
+
+    span {
+      font-size: 1.5rem;
+    }
+  }
+
+  :hover {
+    color: #495191;
+  }
+}
+
+.cost {
+  font-size: 1.7rem;
+}
