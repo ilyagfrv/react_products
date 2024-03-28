@@ -1,0 +1,17 @@
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(1rem, 12rem));
+  grid-auto-rows: 1fr;
+  column-gap: 2rem;
+  row-gap: 4rem;
+  padding: 2rem 4rem;
+
+  // background-color: #ccc;
+}
+
+.product {
+  display: grid;
+  grid-auto-flow: row;
+  grid-template: auto 1fr minmax(2rem, auto) / 1fr;
+  // background-color: #ccc;
+}
