@@ -13,19 +13,15 @@ export default function Header() {
       </a>
 
       <div className={style.actions}>
-        <div className={style.favorite}>
-          <a href='#' target='_blank'>
-            <GiHeartKey />
-            <span>Favorite</span>
-          </a>
-        </div>
+        <a className={style.favorite} href='#'>
+          <GiHeartKey />
+          <span>Favorite</span>
+        </a>
 
-        <div className={style.cart}>
-          <a href='#'>
-            <HiShoppingCart />
-            <span>Cart</span>
-          </a>
-        </div>
+        <a className={style.cart} href='#'>
+          <HiShoppingCart />
+          <span>Cart</span>
+        </a>
 
         <h4 className={style.cost}>
           1230 <FaRubleSign />

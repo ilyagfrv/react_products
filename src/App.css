@@ -74,10 +74,6 @@ body {
   /* grid-template-columns: minmax(10rem, 20rem) 1fr; */
 }
 
-.sidebar {
-  padding: 1rem;
-}
-
 .content {
   grid-column: 2 / 6;
   padding: 3rem;

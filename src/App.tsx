@@ -1,7 +1,7 @@
 import './App.css'
 
-import { Header } from 'components'
-import image from './assets/icons/icon.svg'
+import { Header, Sidebar } from 'components'
+import image from './assets/icons/lemon.svg'
 
 export default function App() {
   return (
@@ -9,23 +9,14 @@ export default function App() {
       <Header />
 
       <main className='main'>
-        <aside className='sidebar'>
-          <nav>
-            <ul>
-              <li>dairy</li>
-              <li>dairy</li>
-              <li>dairy</li>
-              <li>dairy</li>
-            </ul>
-          </nav>
-        </aside>
+        <Sidebar />
 
         <section className='content'>
           <ul className='products'>
             <li className='product__item'>
               <img src={image} alt='' />
               <div>
-                <h4>name</h4>
+                <h4>lor</h4>
                 <h4>1000 rub</h4>
               </div>
               <button>add to cart</button>

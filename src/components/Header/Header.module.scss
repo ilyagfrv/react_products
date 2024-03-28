@@ -29,21 +29,19 @@
 
 .favorite,
 .cart {
-  a {
-    display: grid;
-    place-items: center;
+  display: grid;
+  place-items: center;
 
-    font-size: 3.5rem;
+  font-size: 3.5rem;
 
-    user-select: none;
-    transition: color 0.1s ease;
+  user-select: none;
+  transition: color 0.2s ease;
 
-    span {
-      font-size: 1.5rem;
-    }
+  span {
+    font-size: 1.5rem;
   }
 
-  :hover {
+  &:hover {
     color: #495191;
   }
 }
