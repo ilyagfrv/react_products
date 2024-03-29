@@ -5,6 +5,8 @@
   justify-items: center;
   align-items: center;
   min-width: 100vw;
+
+  user-select: none;
 }
 
 .title {
@@ -14,6 +16,12 @@
   font-size: 3rem;
   font-weight: 900;
   letter-spacing: 0.1rem;
+
+  transition: color 0.1s linear;
+
+  &:hover {
+    color: var(--orange);
+  }
 }
 
 .lemon {
@@ -42,7 +50,7 @@
   }
 
   &:hover {
-    color: #495191;
+    color: var(--blue);
   }
 }
 

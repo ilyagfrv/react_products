@@ -40,6 +40,13 @@ svg {
   height: auto;
 }
 
+:root {
+  --orange: #fcbc44;
+  --green: #50dbc4;
+  --blue: #495191;
+  --box-shadow: 5px 6px 8px var(--green);
+}
+
 html {
   font-size: 62.5%;
 }
@@ -71,5 +78,5 @@ body {
 .main {
   grid-area: main;
   display: grid;
-  /* grid-template-columns: minmax(10rem, 20rem) 1fr; */
+  grid-template-columns: 1fr 4fr;
 }
