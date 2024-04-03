@@ -1,5 +1,6 @@
 import { HiShoppingCart } from 'react-icons/hi2'
-import { FaRubleSign } from 'react-icons/fa'
+import { CgDollar } from 'react-icons/cg'
+
 import { GiHeartKey } from 'react-icons/gi'
 import lemon from 'assets/icons/lemon.svg'
 import style from './Header.module.scss'
@@ -24,7 +25,7 @@ export default function Header() {
         </a>
 
         <h4 className={style.cost}>
-          1230 <FaRubleSign />
+          1230 <CgDollar />
         </h4>
       </div>
     </header>
