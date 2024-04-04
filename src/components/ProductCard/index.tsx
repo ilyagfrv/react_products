@@ -11,7 +11,8 @@ export default function ProductCard({ image, name, price }: Product) {
 
       <div className={style.footer}>
         <h4 className={style.price}>
-          {price} <CgDollar />
+          <CgDollar />
+          {price}
         </h4>
         <button className={style.button}>add to cart</button>
       </div>

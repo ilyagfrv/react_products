@@ -1,7 +1,6 @@
 import { HiShoppingCart } from 'react-icons/hi2'
-import { CgDollar } from 'react-icons/cg'
-
 import { GiHeartKey } from 'react-icons/gi'
+import { CgDollar } from 'react-icons/cg'
 import lemon from 'assets/icons/lemon.svg'
 import style from './Header.module.scss'
 
