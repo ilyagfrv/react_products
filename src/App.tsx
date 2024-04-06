@@ -1,6 +1,8 @@
+import { Routes, Route } from 'react-router-dom'
 import './App.css'
 
-import { Header, Sidebar, Content } from 'components'
+import { Header } from 'components'
+import { Home, NotFound } from 'pages'
 
 export default function App() {
   return (
@@ -8,8 +10,10 @@ export default function App() {
       <Header />
 
       <main className='main'>
-        <Sidebar />
-        <Content />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='*' element={<NotFound />} />
+        </Routes>
       </main>
     </div>
   )
