@@ -24,7 +24,7 @@ export default function Header() {
         </a>
 
         <h4 className={style.cost}>
-          1230 <CgDollar />
+          28.4 <CgDollar />
         </h4>
       </div>
     </header>

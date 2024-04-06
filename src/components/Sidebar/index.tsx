@@ -5,21 +5,23 @@ import useSidebar from './useSidebar'
 const categories = [
   'vegetables',
   'fruits',
-  'meat',
-  'dairy',
   'bakery',
+  'dairy',
+  'sushi',
   'beverages',
 ]
 
 export default function Sidebar() {
-  const [handleSetCategory] = useSidebar()
+  const [handleSetCategory, selectedCategory] = useSidebar()
 
   return (
     <aside className={style.sidebar}>
       <ul className={style.categories}>
         {categories.map((category, index) => (
           <li
-            className={style.category}
+            className={`${style.category} ${
+              selectedCategory === category ? style.active : ''
+            } `}
             key={index}
             onClick={() => handleSetCategory(category)}
           >

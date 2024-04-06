@@ -1,13 +1,15 @@
-import * as React from 'react'
+import { useState, useRef, useEffect } from 'react'
 import style from './Filter.module.scss'
+import useFilter from './useFilter'
 
 const listItems = ['cheaper', 'expensive']
 
 export default function Filter() {
-  const [isVisibleSortList, setIsVisibleSortList] = React.useState(false)
-  const ref = React.useRef<HTMLDivElement>(null)
+  const [isVisibleSortList, setIsVisibleSortList] = useState(false)
+  const ref = useRef<HTMLDivElement>(null)
+  const [handleTitleFilterChange, titleFilter] = useFilter()
 
-  React.useEffect(() => {
+  useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (ref.current && !ref.current.contains(event.target as Node)) {
         setIsVisibleSortList(false)
@@ -23,6 +25,8 @@ export default function Filter() {
         className={style.search}
         type='text'
         placeholder='Try to find something'
+        value={titleFilter}
+        onChange={handleTitleFilterChange}
       />
 
       <div

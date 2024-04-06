@@ -26,15 +26,11 @@
   }
 
   &:first-child {
-    &:hover {
-      border-radius: 0 0.4rem 0 0;
-    }
+    border-radius: 0 0.4rem 0 0;
   }
 
   &:last-child {
-    &:hover {
-      border-radius: 0 0 0.4rem 0;
-    }
+    border-radius: 0 0 0.4rem 0;
   }
 
   &:hover {
@@ -48,4 +44,8 @@
   top: 50%;
 
   transform: translateY(-50%);
+}
+
+.active {
+  background-color: var(--orange);
 }

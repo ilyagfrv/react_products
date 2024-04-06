@@ -1,3 +1,4 @@
 import { RootState } from 'redux/store'
 
-export const selectCategoty = (state: RootState) => state.filter.category
+export const selectCategory = (state: RootState) => state.filter.category
+export const selectTitleFilter = (state: RootState) => state.filter.title

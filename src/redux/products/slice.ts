@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { Product, Status } from 'types'
 import { fetchProductsByCategory } from './asyncActions'
+import { Product, Status } from 'types'
 
 type ProductSlice = {
   list: Product[]
