@@ -1,9 +1,8 @@
 import { CgDollar } from 'react-icons/cg'
-
-import style from './ProductCard.module.scss'
+import style from './Card.module.scss'
 import { Product } from 'types'
 
-export default function ProductCard({ image, title, price }: Product) {
+export default function Card({ image, title, price }: Product) {
   return (
     <li className={style.product}>
       <img className={style.image} src={`images/${image}`} alt='' />

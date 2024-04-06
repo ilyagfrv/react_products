@@ -4,10 +4,11 @@ import { useAppDispatch } from 'redux/redux-hook'
 import { selectCategory } from 'redux/filter/selectors'
 import { selectProducts } from 'redux/products/selectors'
 import { fetchProductsByCategory } from 'redux/products/asyncActions'
+import { Product } from 'types'
 
-export default function useProducts() {
+export default function useProducts(): [string, Product[]] {
   const dispatch = useAppDispatch()
-  const products = useSelector(selectProducts)
+  const { status, list } = useSelector(selectProducts)
   const category = useSelector(selectCategory)
 
   React.useEffect(() => {
@@ -18,5 +19,5 @@ export default function useProducts() {
     )
   }, [category, dispatch])
 
-  return [products]
+  return [status, list]
 }

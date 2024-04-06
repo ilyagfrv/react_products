@@ -3,6 +3,7 @@ import Sidebar from './Sidebar'
 import Content from './Content'
 import Filter from './Filter'
 import Products from './Products'
-import ProductCard from './ProductCard'
+import Card from './Card'
+import CardLoader from './Skeleton/CardLoader'
 
-export { Header, Sidebar, Content, Filter, Products, ProductCard }
+export { Header, Sidebar, Content, Filter, Products, Card, CardLoader }
