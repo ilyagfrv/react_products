@@ -1,0 +1,67 @@
+.container {
+  display: grid;
+  place-items: center;
+  width: 100vw;
+  padding: 30rem;
+}
+
+.content {
+  text-align: center;
+  position: relative;
+}
+
+.title {
+  margin-bottom: 3rem;
+
+  font-size: 4rem;
+  font-weight: 800;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 3rem;
+
+  border-radius: 0.4rem;
+  background-color: var(--green);
+
+  font-size: 2rem;
+  font-weight: 800;
+  font-style: italic;
+
+  cursor: pointer;
+  transition: background-color 0.2s linear;
+
+  &:hover {
+    background-color: var(--orange);
+  }
+}
+
+.palm {
+  width: 20rem;
+  height: 20rem;
+
+  position: absolute;
+  top: -15rem;
+  left: -10rem;
+  z-index: 1;
+
+  animation: palm-tree 4s infinite 0s linear alternate;
+}
+
+@keyframes palm-tree {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(-3deg);
+  }
+  75% {
+    transform: rotate(-2deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}

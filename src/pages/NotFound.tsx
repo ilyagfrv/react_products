@@ -1,3 +1,5 @@
+import { NotFoundBlock } from 'components'
+
 export default function NotFound() {
-  return <h1>NOTHING!</h1>
+  return <NotFoundBlock />
 }
