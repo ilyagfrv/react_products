@@ -1,0 +1,153 @@
+.cart {
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.title {
+  margin: 4rem 0;
+
+  font-size: 4rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 4rem;
+  width: 100%;
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+.products {
+  height: max-content;
+  padding: 2rem;
+
+  border-radius: 1rem;
+  background-color: #fff;
+}
+
+.product {
+  display: grid;
+  grid-template: 1fr / 1fr 3fr repeat(3, 1fr);
+  place-items: center;
+
+  &:not(:last-child) {
+    margin-bottom: 5rem;
+  }
+}
+
+.image {
+  justify-self: start;
+  width: 7rem;
+  height: 7rem;
+}
+
+.nameContainer {
+  align-self: start;
+  justify-self: start;
+}
+
+.name {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.actions {
+  display: flex;
+}
+
+.icon {
+  margin-right: 0.6rem;
+
+  font-size: 2rem;
+
+  cursor: pointer;
+  transition: color 0.1s linear;
+
+  &:hover {
+    color: rgb(169, 11, 11);
+  }
+}
+
+.price {
+  justify-self: start;
+  font-size: 1.8rem;
+}
+
+.btn {
+  margin: 0 1rem;
+
+  font-size: 2rem;
+  color: var(--green);
+
+  cursor: pointer;
+  transition: color 0.1s linear;
+
+  &:hover {
+    color: var(--orange);
+  }
+}
+
+.count {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.payment {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: max-content;
+  padding: 2rem;
+
+  border-radius: 1rem;
+  background-color: #fff;
+}
+
+.paymentBtn {
+  margin-bottom: 4rem;
+  padding: 2rem;
+
+  border-radius: 1rem;
+  background-color: var(--green);
+
+  font-size: 2rem;
+  font-weight: 600;
+  font-style: italic;
+
+  cursor: pointer;
+  transition: background-color 0.2s linear;
+
+  &:hover {
+    background-color: var(--orange);
+  }
+}
+
+.paymentTitle {
+  margin-bottom: 4rem;
+
+  font-size: 2rem;
+  text-align: left;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.number {
+  display: inline-block;
+  margin-left: 1rem;
+  padding: 1rem 1.4rem;
+
+  border-radius: 1rem;
+  background-color: #f3f4f6;
+
+  font-size: 1.9rem;
+}

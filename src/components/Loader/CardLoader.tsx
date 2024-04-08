@@ -7,7 +7,7 @@ export default function CardLoader() {
       width={450}
       height={550}
       viewBox='0 0 450 550'
-      backgroundColor='#f3f4f6'
+      backgroundColor='#ccced2'
       foregroundColor='#fcbc44'
     >
       <rect x='20' y='20' rx='10' ry='10' width='400' height='500' />

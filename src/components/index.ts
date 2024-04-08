@@ -5,6 +5,8 @@ import Filter from './Filter'
 import Products from './Products'
 import Card from './Card'
 import CardLoader from './Loader/CardLoader'
+import EmptyCart from './EmptyCart'
+import CartBlock from './CartBlock'
 import NotFoundBlock from './NotFound'
 
 export {
@@ -15,5 +17,7 @@ export {
   Products,
   Card,
   CardLoader,
+  EmptyCart,
+  CartBlock,
   NotFoundBlock,
 }
