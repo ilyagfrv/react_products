@@ -1,11 +1,12 @@
 import { useSelector } from 'react-redux'
 import { useAppDispatch } from 'redux/redux-hook'
-import { setTitleFilter } from 'redux/filter/slice'
+import { resetTitleFilter, setTitleFilter } from 'redux/filter/slice'
 import { selectTitleFilter } from 'redux/filter/selectors'
 
 export default function useFilter(): [
+  string,
   (e: React.FormEvent<HTMLInputElement>) => void,
-  string
+  (ref: React.RefObject<HTMLInputElement>) => void
 ] {
   const dispatch = useAppDispatch()
   const titleFilter = useSelector(selectTitleFilter)
@@ -14,5 +15,10 @@ export default function useFilter(): [
     dispatch(setTitleFilter(e.currentTarget.value))
   }
 
-  return [handleTitleFilterChange, titleFilter]
+  const handleResetTitleFilter = (ref: React.RefObject<HTMLInputElement>) => {
+    dispatch(resetTitleFilter())
+    ref.current?.focus()
+  }
+
+  return [titleFilter, handleTitleFilterChange, handleResetTitleFilter]
 }

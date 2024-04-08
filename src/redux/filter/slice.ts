@@ -21,8 +21,12 @@ const filterSlice = createSlice({
     setTitleFilter(state, action: PayloadAction<Product['title']>) {
       state.title = action.payload
     },
+    resetTitleFilter(state) {
+      state.title = ''
+    },
   },
 })
 
-export const { setCategory, setTitleFilter } = filterSlice.actions
+export const { setCategory, setTitleFilter, resetTitleFilter } =
+  filterSlice.actions
 export default filterSlice.reducer
