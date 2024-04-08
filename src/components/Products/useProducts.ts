@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { useSelector } from 'react-redux'
 import { useAppDispatch } from 'redux/redux-hook'
-import { selectCategory } from 'redux/filter/selectors'
+import { selectCategory, selectTitleFilter } from 'redux/filter/selectors'
 import { selectProducts } from 'redux/products/selectors'
 import { fetchProductsByCategory } from 'redux/products/asyncActions'
 import { Product } from 'types'
@@ -10,6 +10,7 @@ export default function useProducts(): [string, Product[]] {
   const dispatch = useAppDispatch()
   const { status, list } = useSelector(selectProducts)
   const category = useSelector(selectCategory)
+  const titleFilter = useSelector(selectTitleFilter)
 
   React.useEffect(() => {
     dispatch(
@@ -19,5 +20,12 @@ export default function useProducts(): [string, Product[]] {
     )
   }, [category, dispatch])
 
-  return [status, list]
+  const filteredProducts = list.filter((product: Product) => {
+    const matchesProducts = product.title
+      .toLowerCase()
+      .includes(titleFilter.toLowerCase())
+    return matchesProducts
+  })
+
+  return [status, filteredProducts]
 }

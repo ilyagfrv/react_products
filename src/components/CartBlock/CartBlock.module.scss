@@ -132,7 +132,7 @@
   text-align: left;
 }
 
-.info {
+.paymentInfo {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -141,7 +141,7 @@
   font-weight: 600;
 }
 
-.number {
+.paymentQuantity {
   display: inline-block;
   margin-left: 1rem;
   padding: 1rem 1.4rem;

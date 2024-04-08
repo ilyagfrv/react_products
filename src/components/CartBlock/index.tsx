@@ -131,9 +131,9 @@ export default function CartBlock() {
           </button>
 
           <h4 className={style.paymentTitle}>Your cart</h4>
-          <div className={style.info}>
+          <div className={style.paymentInfo}>
             <div>
-              Products <span className={style.number}>18</span>
+              Products <span className={style.paymentQuantity}>18</span>
             </div>
             <div>
               <CgDollar />

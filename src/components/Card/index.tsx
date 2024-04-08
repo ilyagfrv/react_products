@@ -4,7 +4,7 @@ import { Product } from 'types'
 
 export default function Card({ image, title, price }: Product) {
   return (
-    <li className={style.product}>
+    <li className={style.card}>
       <img className={style.image} src={`images/${image}`} alt='' />
       <h4 className={style.name}>{title}</h4>
 
