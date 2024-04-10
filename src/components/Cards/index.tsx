@@ -1,22 +1,18 @@
 import style from './Cards.module.scss'
 import { Card, CardLoader } from 'components'
-import useProducts from './useProducts'
+import useCards from './useCards'
 
 export default function Cards() {
-  const [status, filteredProducts] = useProducts()
+  const [status, filteredCards] = useCards()
 
   const skeletons = [...new Array(8)].map((_, index) => (
     <li key={index}>
       <CardLoader />
     </li>
   ))
-  const cards = filteredProducts.map((product) => (
-    <Card key={product.id} {...product} />
-  ))
+  const cards = filteredCards.map((card) => <Card key={card.id} {...card} />)
 
   return (
-    <ul className={style.products}>
-      {status === 'loading' ? skeletons : cards}
-    </ul>
+    <ul className={style.cards}>{status === 'loading' ? skeletons : cards}</ul>
   )
 }

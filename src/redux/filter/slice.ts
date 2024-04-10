@@ -4,11 +4,13 @@ import { Product } from 'types'
 type FilterSlice = {
   category: string
   title: string
+  price: string
 }
 
 const initialState: FilterSlice = {
   category: 'vegetables',
   title: '',
+  price: '',
 }
 
 const filterSlice = createSlice({
@@ -17,6 +19,8 @@ const filterSlice = createSlice({
   reducers: {
     setCategory(state, action: PayloadAction<Product['category']>) {
       state.category = action.payload
+      state.title = ''
+      state.price = ''
     },
     setTitleFilter(state, action: PayloadAction<Product['title']>) {
       state.title = action.payload
@@ -24,9 +28,13 @@ const filterSlice = createSlice({
     resetTitleFilter(state) {
       state.title = ''
     },
+    setSortByPrice(state, action) {
+      state.price = action.payload
+    },
   },
 })
 
-export const { setCategory, setTitleFilter, resetTitleFilter } =
+export const { setCategory, setTitleFilter, resetTitleFilter, setSortByPrice } =
   filterSlice.actions
+
 export default filterSlice.reducer
