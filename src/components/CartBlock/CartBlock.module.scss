@@ -1,10 +1,11 @@
 .cart {
-  padding: 0.5rem;
-  text-align: center;
+  width: 100%;
+  max-width: 120rem;
+  margin: 0 auto 4rem;
 }
 
 .title {
-  margin: 4rem 0;
+  margin: 4rem 2rem;
 
   font-size: 4rem;
   font-weight: 900;
@@ -15,9 +16,6 @@
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 4rem;
-  width: 100%;
-  max-width: 120rem;
-  margin: 0 auto;
 }
 
 .products {

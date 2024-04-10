@@ -1,4 +1,4 @@
-import { EmptyCart, CartBlock } from 'components'
+import { CartEmpty, CartBlock } from 'components'
 
 export default function Cart() {
   return (

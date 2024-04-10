@@ -2,10 +2,12 @@ import Header from './Header'
 import Sidebar from './Sidebar'
 import Content from './Content'
 import Filter from './Filter'
-import Products from './Products'
+import Cards from './Cards'
 import Card from './Card'
 import CardLoader from './Loader/CardLoader'
-import EmptyCart from './EmptyCart'
+import FavoriteEmpty from './FavoriteEmpty'
+import FavoriteBlock from './FavoriteBlock'
+import CartEmpty from './CartEmpty'
 import CartBlock from './CartBlock'
 import NotFoundBlock from './NotFound'
 
@@ -14,10 +16,12 @@ export {
   Sidebar,
   Content,
   Filter,
-  Products,
+  Cards,
   Card,
   CardLoader,
-  EmptyCart,
+  FavoriteEmpty,
+  FavoriteBlock,
+  CartEmpty,
   CartBlock,
   NotFoundBlock,
 }

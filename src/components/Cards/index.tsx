@@ -1,8 +1,8 @@
-import style from './Products.module.scss'
+import style from './Cards.module.scss'
 import { Card, CardLoader } from 'components'
 import useProducts from './useProducts'
 
-export default function Products() {
+export default function Cards() {
   const [status, filteredProducts] = useProducts()
 
   const skeletons = [...new Array(8)].map((_, index) => (
@@ -10,13 +10,13 @@ export default function Products() {
       <CardLoader />
     </li>
   ))
-  const products = filteredProducts.map((product) => (
+  const cards = filteredProducts.map((product) => (
     <Card key={product.id} {...product} />
   ))
 
   return (
     <ul className={style.products}>
-      {status === 'loading' ? skeletons : products}
+      {status === 'loading' ? skeletons : cards}
     </ul>
   )
 }

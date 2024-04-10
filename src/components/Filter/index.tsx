@@ -46,7 +46,7 @@ export default function Filter() {
         onClick={() => setIsVisibleSortList(!isVisibleSortList)}
         ref={sortRef}
       >
-        <h4 className={style.sortTitle}>Sort</h4>
+        <h4 className={style.sortTitle}>price</h4>
 
         {isVisibleSortList && (
           <ul className={style.sortList}>

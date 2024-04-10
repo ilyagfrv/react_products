@@ -1,10 +1,10 @@
-import { Filter, Products } from 'components'
+import { Filter, Cards } from 'components'
 
 export default function Content() {
   return (
     <section>
       <Filter />
-      <Products />
+      <Cards />
     </section>
   )
 }
