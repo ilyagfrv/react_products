@@ -1,20 +1,42 @@
 import { CgDollar } from 'react-icons/cg'
+import { IoMdHeartEmpty } from 'react-icons/io'
 import style from './Card.module.scss'
 import { Product } from 'types'
+import useCard from './useCard'
+import { useSelector } from 'react-redux'
 
-export default function Card({ image, title, price }: Product) {
+export default function Card({ id, image, title, price, weight }: Product) {
+  const [addProductToCart] = useCard()
+  const cartProduct = useSelector((state) =>
+    state.cart.list.find((product: Product) => product.id === id)
+  )
+  const productCount = cartProduct ? cartProduct.count : 0
+
   return (
     <li className={style.card}>
       <img className={style.image} src={`images/${image}`} alt='' />
       <h4 className={style.name}>{title}</h4>
 
-      <div className={style.footer}>
+      <div className={style.details}>
         <h4 className={style.price}>
           <CgDollar />
-          {price}
+          {price} - 1 <span>{weight}</span>
         </h4>
-        <button className={style.button}>add to cart</button>
+
+        <div className={style.block}>
+          {productCount > 0 && (
+            <h4 className={style.counter}>{productCount}</h4>
+          )}
+          <IoMdHeartEmpty className={style.heart} />
+        </div>
       </div>
+
+      <button
+        className={style.button}
+        onClick={() => addProductToCart({ id, image, title, price })}
+      >
+        add to cart
+      </button>
     </li>
   )
 }

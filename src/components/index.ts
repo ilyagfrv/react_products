@@ -9,6 +9,8 @@ import FavoriteEmpty from './FavoriteEmpty'
 import FavoriteBlock from './FavoriteBlock'
 import CartEmpty from './CartEmpty'
 import CartBlock from './CartBlock'
+import CartProduct from './CartProduct'
+import Payment from './Payment'
 import NotFoundBlock from './NotFound'
 
 export {
@@ -23,5 +25,7 @@ export {
   FavoriteBlock,
   CartEmpty,
   CartBlock,
+  CartProduct,
+  Payment,
   NotFoundBlock,
 }

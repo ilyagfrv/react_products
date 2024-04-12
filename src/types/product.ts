@@ -1,11 +1,12 @@
 export type Product = {
-  id: number
+  readonly id: number
   title: string
   price: number
   image: string
-  brand: string
-  weight: number
-  category: string
-  quantity: number
-  country: string
+  brand?: string
+  weight?: number
+  category?: string
+  quantity?: number
+  country?: string
+  count?: number
 }

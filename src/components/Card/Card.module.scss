@@ -7,12 +7,16 @@
   border-radius: 0.4rem;
   box-shadow: var(--box-shadow);
 
-  transition: transform 0.2s ease-in-out;
   will-change: transform;
+  transition: transform 0.2s ease-in-out;
   cursor: pointer;
 
   &:hover {
     transform: translateY(-0.6rem);
+
+    .heart {
+      opacity: 1;
+    }
   }
 }
 
@@ -26,14 +30,49 @@
   line-height: 1.2;
 }
 
-.footer {
+.details {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .price {
+  font-size: 1.8rem;
+
+  span {
+    margin-left: 0.1rem;
+  }
+}
+
+.block {
+  display: flex;
+  align-items: center;
+}
+
+.counter {
+  margin-right: 1rem;
+
+  border-bottom: 1px solid #331c21;
+
   font-size: 2rem;
+  font-weight: 600;
+}
+
+.heart {
+  padding: 1rem;
+
+  border-radius: 0.4rem;
+  box-shadow: var(--box-shadow);
+
+  font-size: 4rem;
+  color: var(--orange);
+
+  opacity: 0;
+  transition: all 0.2s linear;
+
+  &:hover {
+    box-shadow: 5px 6px 8px var(--orange);
+  }
 }
 
 .button {

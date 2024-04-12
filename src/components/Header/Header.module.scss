@@ -45,6 +45,8 @@
   user-select: none;
   transition: color 0.2s ease;
 
+  position: relative;
+
   span {
     font-size: 1.5rem;
   }
@@ -52,6 +54,30 @@
   &:hover {
     color: var(--blue);
   }
+}
+
+.favoriteQty,
+.cartQty {
+  padding: 0.2rem 0.5rem;
+
+  border-radius: 0.4rem;
+  background-color: #1f2937;
+
+  line-height: 1;
+  color: #fff;
+
+  position: absolute;
+  z-index: 1;
+}
+
+.favoriteQty {
+  top: -25%;
+  right: -10%;
+}
+
+.cartQty {
+  top: -25%;
+  right: -35%;
 }
 
 .cost {

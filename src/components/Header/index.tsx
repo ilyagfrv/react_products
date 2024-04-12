@@ -4,8 +4,11 @@ import { GiHeartKey } from 'react-icons/gi'
 import { CgDollar } from 'react-icons/cg'
 import lemon from 'assets/icons/lemon.svg'
 import style from './Header.module.scss'
+import useHeader from './useHeader'
 
 export default function Header() {
+  const [totalPrice, productQuantity] = useHeader()
+
   return (
     <header className={style.header}>
       <Link to='/'>
@@ -17,15 +20,19 @@ export default function Header() {
         <Link className={style.favorite} to='/favorite'>
           <GiHeartKey />
           <span>Favorite</span>
+          {/* <span className={style.favoriteQty}></span> */}
         </Link>
 
         <Link className={style.cart} to='/cart'>
           <HiShoppingCart />
           <span>Cart</span>
+          {!!productQuantity && (
+            <span className={style.cartQty}>{productQuantity}</span>
+          )}
         </Link>
 
         <h4 className={style.cost}>
-          28.4 <CgDollar />
+          {totalPrice} <CgDollar />
         </h4>
       </div>
     </header>
