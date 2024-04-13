@@ -19,6 +19,7 @@ const productSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(fetchProductsByCategory.pending, (state) => {
       state.status = 'loading'
+      state.list = []
     })
     builder.addCase(fetchProductsByCategory.fulfilled, (state, action) => {
       state.status = 'received'
@@ -26,6 +27,7 @@ const productSlice = createSlice({
     })
     builder.addCase(fetchProductsByCategory.rejected, (state) => {
       state.status = 'rejected'
+      state.list = []
     })
   },
 })

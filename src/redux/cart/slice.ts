@@ -1,8 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { Product } from 'types'
+import { SpecialProduct } from 'types'
 
 type CartSlice = {
-  list: Product[]
+  list: SpecialProduct[]
   totalPrice: number
 }
 
@@ -15,27 +15,42 @@ const cartSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
-    addProductToCart(state, action: PayloadAction<Product>) {
-      const findProduct = state.list.find(
-        (product) => product.id === action.payload.id
-      )
-
-      if (findProduct) {
-        if (findProduct.count) {
-          findProduct.count++
-        }
+    addProductToCart(state, action: PayloadAction<SpecialProduct>) {
+      const { id } = action.payload
+      const existingProduct = state.list.find((product) => product.id === id)
+      if (existingProduct) {
+        existingProduct.count++
       } else {
-        state.list.push({
-          ...action.payload,
-          count: 1,
-        })
+        state.list.push({ ...action.payload, count: 1 })
       }
       state.totalPrice = +state.list
-        .reduce((sum, product) => sum + product.price * product.count!, 0)
+        .reduce((sum, product) => sum + product.price * (product.count || 1), 0)
         .toFixed(1)
     },
-    deleteProductFromCart(state, action) {
-      state.list = state.list.filter((product) => product.id !== action.payload)
+    decrementProductCount(state, action: PayloadAction<number>) {
+      const productId = action.payload
+      const existingProduct = state.list.find(
+        (product) => product.id === productId
+      )
+      if (existingProduct) {
+        existingProduct.count--
+        state.totalPrice = +(state.totalPrice - existingProduct!.price).toFixed(
+          1
+        )
+      }
+    },
+    deleteProductFromCart(state, action: PayloadAction<number>) {
+      const productId = action.payload
+      const existingProduct = state.list.find(
+        (product) => product.id === productId
+      )
+      if (existingProduct) {
+        state.list = state.list.filter((product) => product.id !== productId)
+        state.totalPrice = +(
+          state.totalPrice -
+          existingProduct.price * (existingProduct.count || 1)
+        ).toFixed(1)
+      }
     },
     resetTheCart() {
       return initialState
@@ -43,7 +58,11 @@ const cartSlice = createSlice({
   },
 })
 
-export const { addProductToCart, deleteProductFromCart, resetTheCart } =
-  cartSlice.actions
+export const {
+  addProductToCart,
+  decrementProductCount,
+  deleteProductFromCart,
+  resetTheCart,
+} = cartSlice.actions
 
 export default cartSlice.reducer

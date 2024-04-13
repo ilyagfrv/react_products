@@ -5,7 +5,7 @@
   padding: 0 1rem;
 
   border-radius: 0.4rem;
-  box-shadow: var(--box-shadow);
+  box-shadow: var(--box-shadow-green);
 
   will-change: transform;
   transition: transform 0.2s ease-in-out;
@@ -62,7 +62,7 @@
   padding: 1rem;
 
   border-radius: 0.4rem;
-  box-shadow: var(--box-shadow);
+  box-shadow: var(--box-shadow-green);
 
   font-size: 4rem;
   color: var(--orange);
@@ -71,7 +71,7 @@
   transition: all 0.2s linear;
 
   &:hover {
-    box-shadow: 5px 6px 8px var(--orange);
+    box-shadow: var(--box-shadow-orange);
   }
 }
 

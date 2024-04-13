@@ -3,9 +3,35 @@ import { FaMinus, FaPlus } from 'react-icons/fa'
 import { IoIosHeart } from 'react-icons/io'
 import { CgDollar } from 'react-icons/cg'
 import style from './CartProduct.module.scss'
-import { Product } from 'types'
+import { SpecialProduct } from 'types'
+import { useAppDispatch } from 'redux/redux-hook'
+import {
+  addProductToCart,
+  deleteProductFromCart,
+  decrementProductCount,
+} from 'redux/cart/slice'
 
-export default function CartProduct({ image, title, price, count }: Product) {
+export default function CartProduct({
+  id,
+  image,
+  title,
+  price,
+  count,
+}: SpecialProduct) {
+  const dispatch = useAppDispatch()
+
+  const handleDecrementProductCount = () => {
+    dispatch(decrementProductCount(id))
+  }
+
+  const handleIncrementProductCount = () => {
+    dispatch(addProductToCart({ id }))
+  }
+
+  const handleDeleteProductFromCart = () => {
+    dispatch(deleteProductFromCart(id))
+  }
+
   return (
     <li className={style.product}>
       <img className={style.image} src={`images/${image}`} alt='' />
@@ -14,7 +40,10 @@ export default function CartProduct({ image, title, price, count }: Product) {
         <h4 className={style.name}>{title}</h4>
         <div className={style.actions}>
           <IoIosHeart className={style.icon} />
-          <PiTrashSimpleFill className={style.icon} />
+          <PiTrashSimpleFill
+            className={style.icon}
+            onClick={handleDeleteProductFromCart}
+          />
         </div>
       </div>
 
@@ -24,10 +53,10 @@ export default function CartProduct({ image, title, price, count }: Product) {
       </h4>
 
       <div>
-        <button className={style.btn}>
+        <button className={style.btn} onClick={handleDecrementProductCount}>
           <FaMinus />
         </button>
-        <button className={style.btn}>
+        <button className={style.btn} onClick={handleIncrementProductCount}>
           <FaPlus />
         </button>
       </div>

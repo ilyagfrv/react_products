@@ -1,12 +1,16 @@
 export type Product = {
-  readonly id: number
+  id: number
   title: string
   price: number
   image: string
-  brand?: string
-  weight?: number
-  category?: string
-  quantity?: number
-  country?: string
-  count?: number
+  brand: string
+  weight: number
+  category: string
+  country: string
+  count: number
 }
+
+export type SpecialProduct = Pick<
+  Product,
+  'id' | 'image' | 'title' | 'price' | 'count'
+>

@@ -6,7 +6,7 @@ export default function CartBlock() {
   const [products] = useCart()
 
   return (
-    <section className={style.cart}>
+    <div className={style.cart}>
       <h2 className={style.title}>Cart</h2>
 
       <div className={style.container}>
@@ -18,6 +18,6 @@ export default function CartBlock() {
 
         <Payment />
       </div>
-    </section>
+    </div>
   )
 }

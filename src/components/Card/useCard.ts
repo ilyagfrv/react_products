@@ -1,15 +1,20 @@
 import { useSelector } from 'react-redux'
-import { addProductToCart } from 'redux/cart/slice'
 import { useAppDispatch } from 'redux/redux-hook'
-import { Product } from 'types'
+import { addProductToCart } from 'redux/cart/slice'
+import { selectSingleProduct } from 'redux/cart/selectors'
+import { SpecialProduct } from 'types'
 
-export default function useCard() {
+export default function useCard(
+  id: number
+): [(product: SpecialProduct) => void, SpecialProduct | undefined] {
   const dispatch = useAppDispatch()
+  const cartProduct = useSelector(selectSingleProduct(id)) as
+    | SpecialProduct
+    | undefined
 
-
-  const handleAddProductToCart = ({ ...product }: Product) => {
+  const handleAddProductToCart = ({ ...product }: SpecialProduct) => {
     dispatch(addProductToCart(product))
   }
 
-  return [handleAddProductToCart]
+  return [handleAddProductToCart, cartProduct]
 }

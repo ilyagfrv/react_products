@@ -13,6 +13,14 @@ export default function Cards() {
   const cards = filteredCards.map((card) => <Card key={card.id} {...card} />)
 
   return (
-    <ul className={style.cards}>{status === 'loading' ? skeletons : cards}</ul>
+    <>
+      {status === 'rejected' ? (
+        <h2>Error</h2>
+      ) : (
+        <ul className={style.cards}>
+          {status === 'loading' ? skeletons : cards}
+        </ul>
+      )}
+    </>
   )
 }

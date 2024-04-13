@@ -43,7 +43,8 @@ svg {
   --orange: #fcbc44;
   --green: #50dbc4;
   --blue: #495191;
-  --box-shadow: 5px 6px 8px var(--green);
+  --box-shadow-green: 5px 6px 8px var(--green);
+  --box-shadow-orange: 5px 6px 8px var(--orange);
 }
 
 html {

@@ -3,13 +3,10 @@ import { IoMdHeartEmpty } from 'react-icons/io'
 import style from './Card.module.scss'
 import { Product } from 'types'
 import useCard from './useCard'
-import { useSelector } from 'react-redux'
 
-export default function Card({ id, image, title, price, weight }: Product) {
-  const [addProductToCart] = useCard()
-  const cartProduct = useSelector((state) =>
-    state.cart.list.find((product: Product) => product.id === id)
-  )
+export default function Card(product: Product) {
+  const { id, image, title, price, weight, count } = product
+  const [addProductToCart, cartProduct] = useCard(id)
   const productCount = cartProduct ? cartProduct.count : 0
 
   return (
@@ -33,7 +30,7 @@ export default function Card({ id, image, title, price, weight }: Product) {
 
       <button
         className={style.button}
-        onClick={() => addProductToCart({ id, image, title, price })}
+        onClick={() => addProductToCart({ id, image, title, price, count })}
       >
         add to cart
       </button>
