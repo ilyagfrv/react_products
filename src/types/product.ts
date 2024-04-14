@@ -1,4 +1,4 @@
-export type Product = {
+export type ProductType = {
   id: number
   title: string
   price: number
@@ -8,9 +8,10 @@ export type Product = {
   category: string
   country: string
   count: number
+  expirationDate: string
 }
 
-export type SpecialProduct = Pick<
-  Product,
+export type SimplifiedProductType = Pick<
+  ProductType,
   'id' | 'image' | 'title' | 'price' | 'count'
 >

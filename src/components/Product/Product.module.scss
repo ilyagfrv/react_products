@@ -1,0 +1,54 @@
+.product {
+  display: grid;
+  grid-template: 1fr / repeat(2, 1fr);
+  grid: 5rem;
+  width: 100%;
+  max-width: 100rem;
+  margin: 4rem auto;
+  padding: 0 2rem;
+}
+
+.title {
+  margin-bottom: 4rem;
+  font-size: 5rem;
+  font-weight: 800;
+}
+
+.image {
+  // width: 100%;
+  width: 40rem;
+  height: 40rem;
+  padding: 2rem;
+
+  border-radius: 1rem;
+  // background-color: #fff;
+  box-shadow: var(--box-shadow-green);
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+
+  li {
+    margin-bottom: 1rem;
+    padding: 1rem;
+
+    border-radius: 0.4rem;
+
+    font-size: 3rem;
+    font-weight: 700;
+  }
+
+  li:nth-child(odd) {
+    background-color: #331c21;
+    color: #fff;
+  }
+
+  li:nth-child(even) {
+    background-color: #fff;
+    color: #331c21;
+    font-weight: 900;
+
+  }
+}

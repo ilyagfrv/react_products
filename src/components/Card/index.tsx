@@ -1,18 +1,21 @@
+import { Link } from 'react-router-dom'
 import { CgDollar } from 'react-icons/cg'
 import { IoMdHeartEmpty } from 'react-icons/io'
 import style from './Card.module.scss'
-import { Product } from 'types'
+import { ProductType } from 'types'
 import useCard from './useCard'
 
-export default function Card(product: Product) {
+export default function Card(product: ProductType) {
   const { id, image, title, price, weight, count } = product
   const [addProductToCart, cartProduct] = useCard(id)
   const productCount = cartProduct ? cartProduct.count : 0
 
   return (
     <li className={style.card}>
-      <img className={style.image} src={`images/${image}`} alt='' />
-      <h4 className={style.name}>{title}</h4>
+      <Link className={style.link} to={`/products/${id}`}>
+        <img className={style.image} src={`/images/${image}`} alt='' />
+        <h4 className={style.name}>{title}</h4>
+      </Link>
 
       <div className={style.details}>
         <h4 className={style.price}>

@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { Product } from 'types'
+import { ProductType } from 'types'
 
 type FilterSlice = {
   category: string
@@ -17,12 +17,12 @@ const filterSlice = createSlice({
   name: 'filter',
   initialState,
   reducers: {
-    setCategory(state, action: PayloadAction<Product['category']>) {
+    setCategory(state, action: PayloadAction<ProductType['category']>) {
       state.category = action.payload
       state.title = ''
       state.price = ''
     },
-    setTitleFilter(state, action: PayloadAction<Product['title']>) {
+    setTitleFilter(state, action: PayloadAction<ProductType['title']>) {
       state.title = action.payload
     },
     resetTitleFilter(state) {

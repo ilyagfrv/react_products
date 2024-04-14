@@ -5,11 +5,12 @@ import Filter from './Filter'
 import Cards from './Cards'
 import Card from './Card'
 import CardLoader from './Loader/CardLoader'
-import FavoriteEmpty from './FavoriteEmpty'
-import FavoriteBlock from './FavoriteBlock'
-import CartEmpty from './CartEmpty'
-import CartBlock from './CartBlock'
-import CartProduct from './CartProduct'
+import Product from './Product'
+import FavoriteEmpty from './Favorite/FavoriteEmpty'
+import FavoriteBlock from './Favorite/FavoriteBlock'
+import CartEmpty from './Cart/CartEmpty'
+import CartBlock from './Cart/CartBlock'
+import CartProduct from './Cart/CartProduct'
 import Payment from './Payment'
 import NotFoundBlock from './NotFound'
 
@@ -21,6 +22,7 @@ export {
   Cards,
   Card,
   CardLoader,
+  Product,
   FavoriteEmpty,
   FavoriteBlock,
   CartEmpty,

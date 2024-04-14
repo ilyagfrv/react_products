@@ -1,6 +1,6 @@
 import { Sidebar, Content } from 'components'
 
-export default function Home() {
+export default function Main() {
   return (
     <main className='main'>
       <Sidebar />

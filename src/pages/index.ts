@@ -1,7 +1,7 @@
-import Home from './Home'
+import Main from './Main'
 import Details from './Details'
 import Favorite from './Favorite'
 import Cart from './Cart'
 import NotFound from './NotFound'
 
-export { Home, Details, Favorite, Cart, NotFound }
+export { Main, Details, Favorite, Cart, NotFound }
