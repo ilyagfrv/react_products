@@ -21,7 +21,6 @@ const detailSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(fetchProductDetails.pending, (state) => {
       state.status = 'loading'
-      // state.product = null
     }),
       builder.addCase(fetchProductDetails.fulfilled, (state, action) => {
         state.status = 'received'

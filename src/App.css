@@ -80,3 +80,9 @@ body {
   display: grid;
   grid-template-columns: minmax(20rem, 1fr) 4fr;
 }
+
+.container {
+  width: 100%;
+  max-width: 100rem;
+  margin: 4rem auto;
+}

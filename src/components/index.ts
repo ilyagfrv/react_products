@@ -5,6 +5,7 @@ import Filter from './Filter'
 import Cards from './Cards'
 import Card from './Card'
 import CardLoader from './Loader/CardLoader'
+import ProductLoader from './Loader/ProductLoader'
 import Product from './Product'
 import FavoriteEmpty from './Favorite/FavoriteEmpty'
 import FavoriteBlock from './Favorite/FavoriteBlock'
@@ -22,6 +23,7 @@ export {
   Cards,
   Card,
   CardLoader,
+  ProductLoader,
   Product,
   FavoriteEmpty,
   FavoriteBlock,

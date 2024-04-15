@@ -4,12 +4,16 @@ import { useSelector } from 'react-redux'
 import { useAppDispatch } from 'redux/redux-hook'
 import { fetchProductDetails } from 'redux/details/asyncActions'
 import { clearDetails } from 'redux/details/slice'
-import { selectProductDetails } from 'redux/details/selectors'
-import { Product } from 'components'
+import {
+  selectDetailStatus,
+  selectProductDetails,
+} from 'redux/details/selectors'
+import { Product, ProductLoader } from 'components'
 
 export default function Details() {
   const dispatch = useAppDispatch()
   const details = useSelector(selectProductDetails)
+  const status = useSelector(selectDetailStatus)
   const { id } = useParams()
 
   useEffect(() => {
@@ -23,8 +27,8 @@ export default function Details() {
   }, [id, dispatch])
 
   return (
-    <section>
-      <Product {...details} />
+    <section className='container'>
+      {status === 'loading' ? <ProductLoader /> : <Product {...details!} />}
     </section>
   )
 }
