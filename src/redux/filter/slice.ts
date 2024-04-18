@@ -28,7 +28,7 @@ const filterSlice = createSlice({
     resetTitleFilter(state) {
       state.title = ''
     },
-    setSortByPrice(state, action) {
+    setSortByPrice(state, action: PayloadAction<string>) {
       state.price = action.payload
     },
   },

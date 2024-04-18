@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 import { ProductType, StatusType } from 'types'
 import { fetchProductDetails } from './asyncActions'
 
@@ -22,10 +22,13 @@ const detailSlice = createSlice({
     builder.addCase(fetchProductDetails.pending, (state) => {
       state.status = 'loading'
     }),
-      builder.addCase(fetchProductDetails.fulfilled, (state, action) => {
-        state.status = 'received'
-        state.product = action.payload
-      }),
+      builder.addCase(
+        fetchProductDetails.fulfilled,
+        (state, action: PayloadAction<ProductType>) => {
+          state.status = 'received'
+          state.product = action.payload
+        }
+      ),
       builder.addCase(fetchProductDetails.rejected, (state) => {
         state.status = 'rejected'
       })

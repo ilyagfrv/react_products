@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { fetchProductsByCategory } from './asyncActions'
 import { ProductType, StatusType } from 'types'
 
@@ -21,10 +21,13 @@ const productSlice = createSlice({
       state.status = 'loading'
       state.list = []
     })
-    builder.addCase(fetchProductsByCategory.fulfilled, (state, action) => {
-      state.status = 'received'
-      state.list = action.payload
-    })
+    builder.addCase(
+      fetchProductsByCategory.fulfilled,
+      (state, action: PayloadAction<ProductType[]>) => {
+        state.status = 'received'
+        state.list = action.payload
+      }
+    )
     builder.addCase(fetchProductsByCategory.rejected, (state) => {
       state.status = 'rejected'
       state.list = []

@@ -5,6 +5,7 @@ import Filter from './Filter'
 import Cards from './Cards'
 import Card from './Card'
 import CardLoader from './Loader/CardLoader'
+import CardError from './Error/CardError'
 import ProductLoader from './Loader/ProductLoader'
 import Product from './Product'
 import FavoriteEmpty from './Favorite/FavoriteEmpty'
@@ -23,6 +24,7 @@ export {
   Cards,
   Card,
   CardLoader,
+  CardError,
   ProductLoader,
   Product,
   FavoriteEmpty,

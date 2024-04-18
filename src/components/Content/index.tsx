@@ -1,10 +1,20 @@
-import { Filter, Cards } from 'components'
+import { Filter, Cards, CardError } from 'components'
+import { useSelector } from 'react-redux'
+import { selectProducts } from 'redux/products/selectors'
 
 export default function Content() {
+  const { status } = useSelector(selectProducts)
+
   return (
     <section>
-      <Filter />
-      <Cards />
+      {status === 'rejected' ? (
+        <CardError />
+      ) : (
+        <>
+          <Filter />
+          <Cards />
+        </>
+      )}
     </section>
   )
 }

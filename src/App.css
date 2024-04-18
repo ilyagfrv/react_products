@@ -40,6 +40,8 @@ svg {
 }
 
 :root {
+  --black: #331c21;
+  --white: #f3f4f6;
   --orange: #fcbc44;
   --green: #50dbc4;
   --blue: #495191;
@@ -56,13 +58,13 @@ body {
   height: 100%;
   overflow-x: hidden;
 
-  background-color: #f3f4f6;
+  background-color: var(--white);
 
   font-family: 'Roboto Slab', serif;
-  color: #331c21;
+  color: var(--black);
 
   ::selection {
-    background-color: #6fded6;
+    background-color: var(--blue);
   }
 }
 

@@ -1,7 +1,7 @@
 .container {
   display: grid;
   grid-template: 1fr / repeat(2, 1fr);
-  grid: 5rem;
+  gap: 1rem;
   width: 100%;
   max-width: 100rem;
   margin: 4rem auto;
@@ -50,13 +50,14 @@
 
   font-size: 3rem;
   line-height: 1;
-  color: #fff;
+  color: var(--green);
 
   cursor: pointer;
-  transition: color 0.2s linear;
+  transition: all 0.2s linear;
 
   &:hover {
-    color: var(--orange);
+    background-color: var(--green);
+    color: #331c21;
   }
 }
 
@@ -73,11 +74,11 @@
 
   li:nth-child(odd) {
     background-color: #331c21;
-    color: #fff;
+    color: var(--green);
   }
 
   li:nth-child(even) {
-    background-color: #fff;
+    background-color: var(--green);
     font-weight: 900;
     color: #331c21;
   }

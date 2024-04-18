@@ -5,11 +5,22 @@ import { GiHeartKey } from 'react-icons/gi'
 import { CgDollar } from 'react-icons/cg'
 import { ProductType } from 'types'
 import style from './Product.module.scss'
+import useProduct from './useProduct'
 
 export default function Product(product: ProductType) {
-  const { title, image, price, brand, weight, country, expirationDate } =
-    product
+  const {
+    id,
+    title,
+    image,
+    price,
+    brand,
+    weight,
+    country,
+    count,
+    expirationDate,
+  } = product
   const navigate = useNavigate()
+  const [addProductToCart] = useProduct()
 
   return (
     <div className={style.container}>
@@ -26,7 +37,10 @@ export default function Product(product: ProductType) {
           <button className={style.action}>
             <GiHeartKey />
           </button>
-          <button className={style.action}>
+          <button
+            className={style.action}
+            onClick={() => addProductToCart({ id, image, title, price, count })}
+          >
             <HiShoppingCart />
           </button>
         </div>

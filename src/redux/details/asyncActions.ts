@@ -6,10 +6,12 @@ export const fetchProductDetails = createAsyncThunk<ProductType, string>(
   'details/fetchProductDetails',
   async (url, thunkAPI) => {
     try {
-      const { data } = await axios.get(url)
+      const { data } = await axios.get<ProductType>(url)
       return data
     } catch (error) {
-      if (error instanceof Error) {
+      if (axios.isAxiosError(error)) {
+        return thunkAPI.rejectWithValue(error.response?.data)
+      } else {
         return thunkAPI.rejectWithValue(error)
       }
     }

@@ -58,6 +58,10 @@
   &:hover {
     color: var(--orange);
   }
+
+  &:disabled {
+    opacity: 0.4;
+  }
 }
 
 .count {

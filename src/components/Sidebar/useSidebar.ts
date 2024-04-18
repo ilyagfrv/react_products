@@ -1,6 +1,6 @@
+import { useSelector } from 'react-redux'
 import { useAppDispatch } from 'redux/redux-hook'
 import { setCategory } from 'redux/filter/slice'
-import { useSelector } from 'react-redux'
 import { selectCategory } from 'redux/filter/selectors'
 
 export default function useSidebar(): [(title: string) => void, string] {

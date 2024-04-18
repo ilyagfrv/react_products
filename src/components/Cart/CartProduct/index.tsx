@@ -20,7 +20,7 @@ export default function CartProduct(product: SimplifiedProductType) {
   }
 
   const handleIncrementProductCount = () => {
-    dispatch(addProductToCart({ id }))
+    dispatch(addProductToCart({ id } as SimplifiedProductType))
   }
 
   const handleDeleteProductFromCart = () => {
@@ -48,7 +48,11 @@ export default function CartProduct(product: SimplifiedProductType) {
       </h4>
 
       <div>
-        <button className={style.btn} onClick={handleDecrementProductCount}>
+        <button
+          className={style.btn}
+          onClick={handleDecrementProductCount}
+          disabled={count === 1}
+        >
           <FaMinus />
         </button>
         <button className={style.btn} onClick={handleIncrementProductCount}>

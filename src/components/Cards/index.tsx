@@ -1,5 +1,5 @@
 import style from './Cards.module.scss'
-import { Card, CardLoader } from 'components'
+import { Card, CardLoader, CardError } from 'components'
 import useCards from './useCards'
 
 export default function Cards() {
@@ -14,8 +14,8 @@ export default function Cards() {
 
   return (
     <>
-      {status === 'rejected' ? (
-        <h2>Error</h2>
+      {status === 'received' ? (
+        <CardError />
       ) : (
         <ul className={style.cards}>
           {status === 'loading' ? skeletons : cards}
