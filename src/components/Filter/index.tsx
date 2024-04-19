@@ -18,6 +18,7 @@ export default function Filter() {
     handleTitleFilterChange,
     handleResetTitleFilter,
     handleSortByPrice,
+    handleResetSortByPrice,
   ] = useFilter()
 
   useEffect(() => {
@@ -75,6 +76,13 @@ export default function Filter() {
               </li>
             ))}
           </ul>
+        )}
+
+        {sortByPrice && (
+          <IoCloseOutline
+            className={style.sortCleaner}
+            onClick={() => handleResetSortByPrice()}
+          />
         )}
       </div>
     </div>

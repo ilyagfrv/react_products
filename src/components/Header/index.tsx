@@ -7,7 +7,7 @@ import style from './Header.module.scss'
 import useHeader from './useHeader'
 
 export default function Header() {
-  const [totalPrice, productQuantity] = useHeader()
+  const [totalPrice, cartProductQuantity, favoriteProductQuantity] = useHeader()
 
   return (
     <header className={style.header}>
@@ -20,14 +20,16 @@ export default function Header() {
         <Link className={style.favorite} to='/favorite'>
           <GiHeartKey />
           <span>Favorite</span>
-          {/* <span className={style.favoriteQty}></span> */}
+          {!!favoriteProductQuantity && (
+            <span className={style.favoriteQty}>{favoriteProductQuantity}</span>
+          )}
         </Link>
 
         <Link className={style.cart} to='/cart'>
           <HiShoppingCart />
           <span>Cart</span>
-          {!!productQuantity && (
-            <span className={style.cartQty}>{productQuantity}</span>
+          {!!cartProductQuantity && (
+            <span className={style.cartQty}>{cartProductQuantity}</span>
           )}
         </Link>
 

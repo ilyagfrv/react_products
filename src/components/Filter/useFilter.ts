@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux'
 import { useAppDispatch } from 'redux/redux-hook'
 import {
+  resetSortByPrice,
   resetTitleFilter,
   setSortByPrice,
   setTitleFilter,
@@ -12,7 +13,8 @@ export default function useFilter(): [
   string,
   (e: React.FormEvent<HTMLInputElement>) => void,
   (ref: React.RefObject<HTMLInputElement>) => void,
-  (key: string) => void
+  (key: string) => void,
+  () => void
 ] {
   const dispatch = useAppDispatch()
   const titleFilter = useSelector(selectTitleFilter)
@@ -31,11 +33,16 @@ export default function useFilter(): [
     dispatch(setSortByPrice(key))
   }
 
+  const handleResetSortByPrice = () => {
+    dispatch(resetSortByPrice())
+  }
+
   return [
     titleFilter,
     sortByPrice,
     handleTitleFilterChange,
     handleResetTitleFilter,
     handleSortByPrice,
+    handleResetSortByPrice,
   ]
 }

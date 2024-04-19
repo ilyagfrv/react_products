@@ -1,8 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { SimplifiedProductType } from 'types'
+import { CartProductType } from 'types'
 
 type CartSlice = {
-  list: SimplifiedProductType[]
+  list: CartProductType[]
   totalPrice: number
 }
 
@@ -15,11 +15,11 @@ const cartSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
-    addProductToCart(state, action: PayloadAction<SimplifiedProductType>) {
+    addProductToCart(state, action: PayloadAction<CartProductType>) {
       const { id } = action.payload
-      const existingProduct = state.list.find((product) => product.id === id)
-      if (existingProduct) {
-        existingProduct.count++
+      const foundProduct = state.list.find((product) => product.id === id)
+      if (foundProduct) {
+        foundProduct.count++
       } else {
         state.list.push({ ...action.payload, count: 1 })
       }
@@ -29,26 +29,24 @@ const cartSlice = createSlice({
     },
     decrementProductCount(state, action: PayloadAction<number>) {
       const productId = action.payload
-      const existingProduct = state.list.find(
+      const foundProduct = state.list.find(
         (product) => product.id === productId
       )
-      if (existingProduct) {
-        existingProduct.count--
-        state.totalPrice = +(state.totalPrice - existingProduct!.price).toFixed(
-          1
-        )
+      if (foundProduct) {
+        foundProduct.count--
+        state.totalPrice = +(state.totalPrice - foundProduct!.price).toFixed(1)
       }
     },
     deleteProductFromCart(state, action: PayloadAction<number>) {
       const productId = action.payload
-      const existingProduct = state.list.find(
+      const foundProduct = state.list.find(
         (product) => product.id === productId
       )
-      if (existingProduct) {
+      if (foundProduct) {
         state.list = state.list.filter((product) => product.id !== productId)
         state.totalPrice = +(
           state.totalPrice -
-          existingProduct.price * (existingProduct.count || 1)
+          foundProduct.price * (foundProduct.count || 1)
         ).toFixed(1)
       }
     },

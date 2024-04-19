@@ -11,12 +11,10 @@ export default function Payment() {
       <button className={style.paymentBtn} type='button'>
         proceed to payment
       </button>
-
       <div className={style.container}>
         <h4 className={style.paymentTitle}>Your cart</h4>
         <PiTrashSimpleFill className={style.trash} onClick={handleResetCart} />
       </div>
-
       <div className={style.paymentInfo}>
         <div>
           Products{' '}

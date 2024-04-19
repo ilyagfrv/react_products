@@ -3,7 +3,7 @@ import { FaMinus, FaPlus } from 'react-icons/fa'
 import { IoIosHeart } from 'react-icons/io'
 import { CgDollar } from 'react-icons/cg'
 import style from './CartProduct.module.scss'
-import { SimplifiedProductType } from 'types'
+import { CartProductType } from 'types'
 import { useAppDispatch } from 'redux/redux-hook'
 import {
   addProductToCart,
@@ -11,7 +11,7 @@ import {
   decrementProductCount,
 } from 'redux/cart/slice'
 
-export default function CartProduct(product: SimplifiedProductType) {
+export default function CartProduct(product: CartProductType) {
   const { id, image, title, price, count } = product
   const dispatch = useAppDispatch()
 
@@ -20,7 +20,7 @@ export default function CartProduct(product: SimplifiedProductType) {
   }
 
   const handleIncrementProductCount = () => {
-    dispatch(addProductToCart({ id } as SimplifiedProductType))
+    dispatch(addProductToCart({ id } as CartProductType))
   }
 
   const handleDeleteProductFromCart = () => {

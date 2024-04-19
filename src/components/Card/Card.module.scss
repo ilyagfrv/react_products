@@ -16,6 +16,10 @@
     .heart {
       opacity: 1;
     }
+
+    .favorite {
+      opacity: 1;
+    }
   }
 }
 
@@ -64,20 +68,33 @@
   font-weight: 600;
 }
 
-.heart {
+.heart,
+.favorite {
   padding: 1rem;
 
   border-radius: 0.4rem;
-  box-shadow: var(--box-shadow-green);
 
   font-size: 4rem;
-  color: var(--orange);
 
   opacity: 0;
   transition: all 0.2s linear;
+}
+
+.heart {
+  color: var(--orange);
+  box-shadow: var(--box-shadow-green);
 
   &:hover {
     box-shadow: var(--box-shadow-orange);
+  }
+}
+
+.favorite {
+  color: red;
+  box-shadow: var(--box-shadow-red);
+
+  &:hover {
+    box-shadow: var(--box-shadow-red);
   }
 }
 

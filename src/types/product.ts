@@ -11,7 +11,12 @@ export type ProductType = {
   expirationDate: string
 }
 
-export type SimplifiedProductType = Pick<
+export type CartProductType = Pick<
   ProductType,
   'id' | 'image' | 'title' | 'price' | 'count'
+>
+
+export type FavoriteProductType = Pick<
+  ProductType,
+  'id' | 'image' | 'title' | 'price' | 'weight' | 'count'
 >

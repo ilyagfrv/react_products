@@ -14,7 +14,7 @@ export default function Cards() {
 
   return (
     <>
-      {status === 'received' ? (
+      {status === 'rejected' ? (
         <CardError />
       ) : (
         <ul className={style.cards}>

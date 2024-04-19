@@ -47,6 +47,7 @@ svg {
   --blue: #495191;
   --box-shadow-green: 5px 6px 8px var(--green);
   --box-shadow-orange: 5px 6px 8px var(--orange);
+  --box-shadow-red: 5px 6px 8px red;
 }
 
 html {
@@ -64,7 +65,7 @@ body {
   color: var(--black);
 
   ::selection {
-    background-color: var(--blue);
+    background-color: var(--white);
   }
 }
 

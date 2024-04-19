@@ -1,13 +1,14 @@
-import { Link } from 'react-router-dom'
+import { IoMdHeartEmpty, IoMdHeart } from 'react-icons/io'
 import { CgDollar } from 'react-icons/cg'
-import { IoMdHeartEmpty } from 'react-icons/io'
+import { Link } from 'react-router-dom'
 import style from './Card.module.scss'
 import { ProductType } from 'types'
 import useCard from './useCard'
 
 export default function Card(product: ProductType) {
   const { id, image, title, price, weight, count } = product
-  const [addProductToCart, cartProduct] = useCard(id)
+  const [cartProduct, favoriteProduct, addProductToCart, addProductToFavorite] =
+    useCard(id)
   const productCount = cartProduct ? cartProduct.count : 0
 
   return (
@@ -27,7 +28,21 @@ export default function Card(product: ProductType) {
           {productCount > 0 && (
             <h4 className={style.counter}>{productCount}</h4>
           )}
-          <IoMdHeartEmpty className={style.heart} />
+          {favoriteProduct ? (
+            <IoMdHeart
+              className={style.favorite}
+              onClick={() =>
+                addProductToFavorite({ id, image, title, price, weight, count })
+              }
+            />
+          ) : (
+            <IoMdHeartEmpty
+              className={style.heart}
+              onClick={() =>
+                addProductToFavorite({ id, image, title, price, weight, count })
+              }
+            />
+          )}
         </div>
       </div>
 

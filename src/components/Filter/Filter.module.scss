@@ -22,7 +22,6 @@
 }
 
 .clean {
-  display: inline-block;
   padding: 0.5rem;
 
   border-radius: 0.4rem;
@@ -88,5 +87,23 @@
 
   &:hover {
     color: var(--orange);
+  }
+}
+
+.sortCleaner {
+  border-radius: 0.4rem;
+
+  font-size: 2.5rem;
+
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  z-index: 1;
+
+  transform: translateY(-50%);
+  transition: background-color 0.2s linear;
+
+  &:hover {
+    background-color: var(--green);
   }
 }
