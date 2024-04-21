@@ -3,9 +3,9 @@ import { HiShoppingCart } from 'react-icons/hi2'
 import { TiArrowBack } from 'react-icons/ti'
 import { GiHeartKey } from 'react-icons/gi'
 import { CgDollar } from 'react-icons/cg'
-import { ProductType } from 'types'
 import style from './Product.module.scss'
 import useProduct from './useProduct'
+import { ProductType } from 'types'
 
 export default function Product(product: ProductType) {
   const {
@@ -20,7 +20,8 @@ export default function Product(product: ProductType) {
     expirationDate,
   } = product
   const navigate = useNavigate()
-  const [addProductToCart] = useProduct()
+  const [favoriteProduct, addProductToFavorite, addProductToCart] =
+    useProduct(id)
 
   return (
     <div className={style.container}>
@@ -34,7 +35,14 @@ export default function Product(product: ProductType) {
           <button className={style.action} onClick={() => navigate(-1)}>
             <TiArrowBack />
           </button>
-          <button className={style.action}>
+          <button
+            className={`${style.action} ${
+              favoriteProduct ? style.favorite : ''
+            }`}
+            onClick={() =>
+              addProductToFavorite({ id, image, title, price, weight, count })
+            }
+          >
             <GiHeartKey />
           </button>
           <button

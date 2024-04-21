@@ -12,6 +12,7 @@
 
 .category {
   padding: 3rem 2rem;
+
   font-size: 2rem;
   font-weight: 700;
 
@@ -40,8 +41,8 @@
 
 .arrow {
   position: absolute;
-  right: 10%;
   top: 50%;
+  right: 10%;
 
   transform: translateY(-50%);
 }

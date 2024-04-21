@@ -14,12 +14,12 @@
   height: 7rem;
 }
 
-.nameContainer {
+.container {
   align-self: start;
   justify-self: start;
 }
 
-.name {
+.title {
   margin-bottom: 1rem;
   font-size: 2rem;
 }
@@ -37,8 +37,12 @@
   transition: color 0.1s linear;
 
   &:hover {
-    color: rgb(169, 11, 11);
+    color: var(--red);
   }
+}
+
+.inFavorite {
+  color: var(--red);
 }
 
 .price {

@@ -5,7 +5,6 @@ import Filter from './Filter'
 import Cards from './Cards'
 import Card from './Card'
 import CardLoader from './Loader/CardLoader'
-import CardError from './Error/CardError'
 import ProductLoader from './Loader/ProductLoader'
 import Product from './Product'
 import FavoriteEmpty from './Favorite/FavoriteEmpty'
@@ -15,6 +14,7 @@ import CartBlock from './Cart/CartBlock'
 import CartProduct from './Cart/CartProduct'
 import Payment from './Payment'
 import NotFoundBlock from './NotFound'
+import Error from './Error'
 
 export {
   Header,
@@ -24,7 +24,6 @@ export {
   Cards,
   Card,
   CardLoader,
-  CardError,
   ProductLoader,
   Product,
   FavoriteEmpty,
@@ -34,4 +33,5 @@ export {
   CartProduct,
   Payment,
   NotFoundBlock,
+  Error,
 }

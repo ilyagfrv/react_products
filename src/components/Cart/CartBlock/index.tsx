@@ -1,5 +1,5 @@
-import { CartProduct, Payment } from 'components'
 import style from './CartBlock.module.scss'
+import { CartProduct, Payment } from 'components'
 import useCart from './useCart'
 
 export default function CartBlock() {

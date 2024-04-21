@@ -3,41 +3,44 @@ import { FaMinus, FaPlus } from 'react-icons/fa'
 import { IoIosHeart } from 'react-icons/io'
 import { CgDollar } from 'react-icons/cg'
 import style from './CartProduct.module.scss'
-import { CartProductType } from 'types'
-import { useAppDispatch } from 'redux/redux-hook'
-import {
-  addProductToCart,
-  deleteProductFromCart,
-  decrementProductCount,
-} from 'redux/cart/slice'
+import { SimplifiedProductType } from 'types'
+import useCartProduct from './useCartProduct'
 
-export default function CartProduct(product: CartProductType) {
-  const { id, image, title, price, count } = product
-  const dispatch = useAppDispatch()
-
-  const handleDecrementProductCount = () => {
-    dispatch(decrementProductCount(id))
-  }
-
-  const handleIncrementProductCount = () => {
-    dispatch(addProductToCart({ id } as CartProductType))
-  }
-
-  const handleDeleteProductFromCart = () => {
-    dispatch(deleteProductFromCart(id))
-  }
+export default function CartProduct(product: SimplifiedProductType) {
+  const { id, image, title, price, weight, count } = product
+  const [
+    favoriteProduct,
+    addProductToFavorite,
+    deleteProductFromCart,
+    decrementProductCount,
+    incrementProductCount,
+  ] = useCartProduct(id)
 
   return (
     <li className={style.product}>
       <img className={style.image} src={`/images/${image}`} alt='' />
 
-      <div className={style.nameContainer}>
-        <h4 className={style.name}>{title}</h4>
+      <div className={style.container}>
+        <h4 className={style.title}>{title}</h4>
         <div className={style.actions}>
-          <IoIosHeart className={style.icon} />
+          <IoIosHeart
+            className={`${style.icon} ${
+              favoriteProduct ? style.inFavorite : ''
+            }`}
+            onClick={() =>
+              addProductToFavorite({
+                id,
+                image,
+                title,
+                price,
+                weight,
+                count,
+              })
+            }
+          />
           <PiTrashSimpleFill
             className={style.icon}
-            onClick={handleDeleteProductFromCart}
+            onClick={deleteProductFromCart}
           />
         </div>
       </div>
@@ -50,12 +53,12 @@ export default function CartProduct(product: CartProductType) {
       <div>
         <button
           className={style.btn}
-          onClick={handleDecrementProductCount}
+          onClick={decrementProductCount}
           disabled={count === 1}
         >
           <FaMinus />
         </button>
-        <button className={style.btn} onClick={handleIncrementProductCount}>
+        <button className={style.btn} onClick={incrementProductCount}>
           <FaPlus />
         </button>
       </div>

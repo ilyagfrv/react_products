@@ -4,19 +4,24 @@ export type ProductType = {
   price: number
   image: string
   brand: string
+  count: number
   weight: number
   category: string
   country: string
-  count: number
   expirationDate: string
 }
 
-export type CartProductType = Pick<
-  ProductType,
-  'id' | 'image' | 'title' | 'price' | 'count'
->
+// export type CartProductType = Pick<
+//   ProductType,
+//   'id' | 'image' | 'title' | 'price' | 'weight' | 'count'
+// >
 
-export type FavoriteProductType = Pick<
+// export type FavoriteProductType = Pick<
+//   ProductType,
+//   'id' | 'image' | 'title' | 'price' | 'weight' | 'count'
+// >
+
+export type SimplifiedProductType = Pick<
   ProductType,
   'id' | 'image' | 'title' | 'price' | 'weight' | 'count'
 >

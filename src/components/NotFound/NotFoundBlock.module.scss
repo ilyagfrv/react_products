@@ -32,7 +32,8 @@
   transition: background-color 0.2s linear;
 
   &:hover {
-    background-color: var(--orange);
+    background-color: var(--black);
+    color: var(--white);
   }
 }
 

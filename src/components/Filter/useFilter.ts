@@ -1,12 +1,12 @@
 import { useSelector } from 'react-redux'
 import { useAppDispatch } from 'redux/redux-hook'
 import {
-  resetSortByPrice,
+  setTitleFilter,
   resetTitleFilter,
   setSortByPrice,
-  setTitleFilter,
+  resetSortByPrice,
 } from 'redux/filter/slice'
-import { selectSortByPrice, selectTitleFilter } from 'redux/filter/selectors'
+import { selectTitleFilter, selectSortByPrice } from 'redux/filter/selectors'
 
 export default function useFilter(): [
   string,

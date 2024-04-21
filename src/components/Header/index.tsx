@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
-import { HiShoppingCart } from 'react-icons/hi2'
 import { GiHeartKey } from 'react-icons/gi'
+import { HiShoppingCart } from 'react-icons/hi2'
 import { CgDollar } from 'react-icons/cg'
 import lemon from 'assets/icons/lemon.svg'
 import style from './Header.module.scss'
@@ -10,7 +10,7 @@ export default function Header() {
   const [totalPrice, cartProductQuantity, favoriteProductQuantity] = useHeader()
 
   return (
-    <header className={style.header}>
+    <header className={style.header} id='header'>
       <Link to='/'>
         <h1 className={style.title}>The freshest products</h1>
         <img className={style.lemon} src={lemon} alt='' />

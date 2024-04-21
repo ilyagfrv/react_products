@@ -17,14 +17,10 @@
       opacity: 1;
     }
 
-    .favorite {
+    .inFavorite {
       opacity: 1;
     }
   }
-}
-
-.link {
-  flex: 1 1 auto;
 }
 
 .image {
@@ -33,7 +29,7 @@
   margin-bottom: 2rem;
 }
 
-.name {
+.title {
   margin-bottom: 1rem;
   font-size: 2rem;
 }
@@ -69,7 +65,7 @@
 }
 
 .heart,
-.favorite {
+.inFavorite {
   padding: 1rem;
 
   border-radius: 0.4rem;
@@ -89,8 +85,8 @@
   }
 }
 
-.favorite {
-  color: red;
+.inFavorite {
+  color: var(--red);
   box-shadow: var(--box-shadow-red);
 
   &:hover {
@@ -112,6 +108,6 @@
   transition: background-color 0.1s linear;
 
   &:hover {
-    background-color: #fad119;
+    background-color: #ebdd0e;
   }
 }

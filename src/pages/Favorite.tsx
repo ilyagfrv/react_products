@@ -1,10 +1,13 @@
-import { FavoriteEmpty, FavoriteBlock } from 'components'
 import { useSelector } from 'react-redux'
-import { selectFavoriteProductQuantity } from 'redux/favorite/selectors'
+import { FavoriteBlock, FavoriteEmpty } from 'components'
+import { selectFavoriteProducts } from 'redux/favorite/selectors'
 
 export default function Favorite() {
-  const favoriteProductLength = useSelector(selectFavoriteProductQuantity)
+  const favoriteProducts = useSelector(selectFavoriteProducts)
+
   return (
-    <div>{favoriteProductLength ? <FavoriteBlock /> : <FavoriteEmpty />}</div>
+    <section>
+      {favoriteProducts.length > 0 ? <FavoriteBlock /> : <FavoriteEmpty />}
+    </section>
   )
 }

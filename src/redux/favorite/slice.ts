@@ -1,8 +1,8 @@
-import { createSlice } from '@reduxjs/toolkit'
-import { ProductType } from 'types'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { SimplifiedProductType } from 'types'
 
 type FavoriteSlice = {
-  list: ProductType[]
+  list: SimplifiedProductType[]
 }
 
 const initialState: FavoriteSlice = {
@@ -13,7 +13,7 @@ const favoriteSlice = createSlice({
   name: 'favorite',
   initialState,
   reducers: {
-    addProductToFavorite(state, action) {
+    addProductToFavorite(state, action: PayloadAction<SimplifiedProductType>) {
       const { id } = action.payload
       const foundProduct = state.list.find((product) => product.id === id)
       if (foundProduct) {

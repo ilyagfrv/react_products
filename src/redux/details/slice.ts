@@ -1,6 +1,6 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit'
-import { ProductType, StatusType } from 'types'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { fetchProductDetails } from './asyncActions'
+import { ProductType, StatusType } from 'types'
 
 type DetailSlice = {
   product: ProductType | null

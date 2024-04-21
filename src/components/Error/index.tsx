@@ -1,7 +1,7 @@
 import img from 'assets/icons/icon-empty.svg'
-import style from './CardError.module.scss'
+import style from './Error.module.scss'
 
-export default function CardError() {
+export default function Error() {
   return (
     <div className={style.container}>
       <img className={style.image} src={img} alt='' />

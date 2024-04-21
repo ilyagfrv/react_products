@@ -1,13 +1,31 @@
-import { addProductToCart } from 'redux/cart/slice'
+import { useSelector } from 'react-redux'
 import { useAppDispatch } from 'redux/redux-hook'
-import { CartProductType } from 'types'
+import { addProductToCart } from 'redux/cart/slice'
+import { addProductToFavorite } from 'redux/favorite/slice'
+import { selectFavoriteProduct } from 'redux/favorite/selectors'
+import { SimplifiedProductType } from 'types'
 
-export default function useProduct() {
+export default function useProduct(
+  id: number
+): [
+  SimplifiedProductType | undefined,
+  (product: SimplifiedProductType) => void,
+  (product: SimplifiedProductType) => void
+] {
   const dispatch = useAppDispatch()
+  const favoriteProduct = useSelector(selectFavoriteProduct(id)) as
+    | SimplifiedProductType
+    | undefined
 
-  const handleAddProductToCart = ({ ...product }: CartProductType) => {
+  const handleAddProductToFavorite = ({
+    ...product
+  }: SimplifiedProductType) => {
+    dispatch(addProductToFavorite(product))
+  }
+
+  const handleAddProductToCart = ({ ...product }: SimplifiedProductType) => {
     dispatch(addProductToCart(product))
   }
 
-  return [handleAddProductToCart]
+  return [favoriteProduct, handleAddProductToFavorite, handleAddProductToCart]
 }

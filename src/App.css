@@ -45,9 +45,10 @@ svg {
   --orange: #fcbc44;
   --green: #50dbc4;
   --blue: #495191;
+  --red: #eb3f0e;
   --box-shadow-green: 5px 6px 8px var(--green);
   --box-shadow-orange: 5px 6px 8px var(--orange);
-  --box-shadow-red: 5px 6px 8px red;
+  --box-shadow-red: 5px 6px 8px var(--red);
 }
 
 html {
@@ -63,6 +64,8 @@ body {
 
   font-family: 'Roboto Slab', serif;
   color: var(--black);
+
+  scroll-behavior: smooth;
 
   ::selection {
     background-color: var(--white);

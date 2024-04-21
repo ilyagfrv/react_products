@@ -10,8 +10,8 @@ const listItems = [
 
 export default function Filter() {
   const [isVisibleSortList, setIsVisibleSortList] = useState(false)
-  const sortRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
+  const sortRef = useRef<HTMLDivElement>(null)
   const [
     titleFilter,
     sortByPrice,
@@ -51,14 +51,14 @@ export default function Filter() {
         />
         {titleFilter && (
           <IoCloseOutline
-            className={style.clean}
+            className={style.searchCleaner}
             onClick={() => handleResetTitleFilter(inputRef)}
           />
         )}
       </div>
 
       <div
-        className={style.sort}
+        className={style.sortContainer}
         onClick={() => setIsVisibleSortList(!isVisibleSortList)}
         ref={sortRef}
       >

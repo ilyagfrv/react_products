@@ -8,7 +8,7 @@ import {
   selectDetailStatus,
   selectProductDetails,
 } from 'redux/details/selectors'
-import { Product, ProductLoader } from 'components'
+import { Error, Product, ProductLoader } from 'components'
 
 export default function Details() {
   const dispatch = useAppDispatch()
@@ -28,7 +28,13 @@ export default function Details() {
 
   return (
     <section className='container'>
-      {status === 'loading' ? <ProductLoader /> : <Product {...details!} />}
+      {status === 'rejected' ? (
+        <Error />
+      ) : status === 'loading' ? (
+        <ProductLoader />
+      ) : (
+        <Product {...details!} />
+      )}
     </section>
   )
 }

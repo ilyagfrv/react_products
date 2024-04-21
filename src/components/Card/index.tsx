@@ -1,11 +1,11 @@
-import { IoMdHeartEmpty, IoMdHeart } from 'react-icons/io'
-import { CgDollar } from 'react-icons/cg'
 import { Link } from 'react-router-dom'
+import { CgDollar } from 'react-icons/cg'
+import { IoMdHeartEmpty, IoMdHeart } from 'react-icons/io'
+import { ProductType, SimplifiedProductType } from 'types'
 import style from './Card.module.scss'
-import { ProductType } from 'types'
 import useCard from './useCard'
 
-export default function Card(product: ProductType) {
+export default function Card(product: ProductType | SimplifiedProductType) {
   const { id, image, title, price, weight, count } = product
   const [cartProduct, favoriteProduct, addProductToCart, addProductToFavorite] =
     useCard(id)
@@ -13,9 +13,9 @@ export default function Card(product: ProductType) {
 
   return (
     <li className={style.card}>
-      <Link className={style.link} to={`/products/${id}`}>
+      <Link to={`/products/${id}`}>
         <img className={style.image} src={`/images/${image}`} alt='' />
-        <h4 className={style.name}>{title}</h4>
+        <h4 className={style.title}>{title}</h4>
       </Link>
 
       <div className={style.details}>
@@ -30,7 +30,7 @@ export default function Card(product: ProductType) {
           )}
           {favoriteProduct ? (
             <IoMdHeart
-              className={style.favorite}
+              className={style.inFavorite}
               onClick={() =>
                 addProductToFavorite({ id, image, title, price, weight, count })
               }
@@ -48,7 +48,7 @@ export default function Card(product: ProductType) {
 
       <button
         className={style.button}
-        onClick={() => addProductToCart({ id, image, title, price, count })}
+        onClick={() => addProductToCart({ id, image, title, price, weight, count })}
       >
         add to cart
       </button>

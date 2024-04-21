@@ -1,8 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { CartProductType } from 'types'
+import { SimplifiedProductType } from 'types'
 
 type CartSlice = {
-  list: CartProductType[]
+  list: SimplifiedProductType[]
   totalPrice: number
 }
 
@@ -15,7 +15,7 @@ const cartSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
-    addProductToCart(state, action: PayloadAction<CartProductType>) {
+    addProductToCart(state, action: PayloadAction<SimplifiedProductType>) {
       const { id } = action.payload
       const foundProduct = state.list.find((product) => product.id === id)
       if (foundProduct) {
