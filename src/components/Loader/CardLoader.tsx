@@ -1,6 +1,6 @@
 import ContentLoader from 'react-content-loader'
 
-export default function CardLoader() {
+export const CardLoader = () => {
   return (
     <ContentLoader
       speed={2}

@@ -3,7 +3,7 @@ import { selectFavoriteProducts } from 'redux/favorite/selectors'
 import style from './FavoriteBlock.module.scss'
 import { Card } from 'components'
 
-export default function FavoriteBlock() {
+export const FavoriteBlock = () => {
   const favoriteProducts = useSelector(selectFavoriteProducts)
 
   return (

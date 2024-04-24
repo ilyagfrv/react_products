@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import icon from 'assets/icons/icon-empty.svg'
 import style from './CartEmpty.module.scss'
 
-export default function CartEmpty() {
+export const CartEmpty = () => {
   return (
     <div className={style.container}>
       <img className={style.icon} src={icon} alt='' />

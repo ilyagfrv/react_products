@@ -5,7 +5,7 @@ import { ProductType, SimplifiedProductType } from 'types'
 import style from './Card.module.scss'
 import useCard from './useCard'
 
-export default function Card(product: ProductType | SimplifiedProductType) {
+export const Card = (product: ProductType | SimplifiedProductType) => {
   const { id, image, title, price, weight, count } = product
   const [cartProduct, favoriteProduct, addProductToCart, addProductToFavorite] =
     useCard(id)
@@ -48,7 +48,9 @@ export default function Card(product: ProductType | SimplifiedProductType) {
 
       <button
         className={style.button}
-        onClick={() => addProductToCart({ id, image, title, price, weight, count })}
+        onClick={() =>
+          addProductToCart({ id, image, title, price, weight, count })
+        }
       >
         add to cart
       </button>

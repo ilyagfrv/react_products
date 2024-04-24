@@ -11,7 +11,7 @@ const categories = [
   'beverages',
 ]
 
-export default function Sidebar() {
+export const Sidebar = () => {
   const [handleSetCategory, selectedCategory] = useSidebar()
 
   return (

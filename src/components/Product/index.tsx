@@ -1,13 +1,15 @@
 import { useNavigate } from 'react-router-dom'
+
 import { HiShoppingCart } from 'react-icons/hi2'
 import { TiArrowBack } from 'react-icons/ti'
 import { GiHeartKey } from 'react-icons/gi'
 import { CgDollar } from 'react-icons/cg'
+
 import style from './Product.module.scss'
 import useProduct from './useProduct'
 import { ProductType } from 'types'
 
-export default function Product(product: ProductType) {
+export const Product = (product: ProductType) => {
   const {
     id,
     title,
@@ -47,7 +49,9 @@ export default function Product(product: ProductType) {
           </button>
           <button
             className={style.action}
-            onClick={() => addProductToCart({ id, image, title, price, count })}
+            onClick={() =>
+              addProductToCart({ id, image, title, price, weight, count })
+            }
           >
             <HiShoppingCart />
           </button>

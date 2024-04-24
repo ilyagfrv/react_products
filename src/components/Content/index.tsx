@@ -1,8 +1,8 @@
 import { useSelector } from 'react-redux'
 import { selectProducts } from 'redux/products/selectors'
-import { Filter, Cards, Error, Scroll } from 'components'
+import { Filter, Cards, Error } from 'components'
 
-export default function Content() {
+export const Content = () => {
   const { status } = useSelector(selectProducts)
 
   return (

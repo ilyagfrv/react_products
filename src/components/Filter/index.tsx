@@ -8,7 +8,7 @@ const listItems = [
   { key: '-price', value: 'expensive' },
 ]
 
-export default function Filter() {
+export const Filter = () => {
   const [isVisibleSortList, setIsVisibleSortList] = useState(false)
   const inputRef = useRef<HTMLInputElement>(null)
   const sortRef = useRef<HTMLDivElement>(null)

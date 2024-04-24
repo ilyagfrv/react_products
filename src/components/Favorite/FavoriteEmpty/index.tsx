@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import icon from 'assets/icons/icon-empty.svg'
 import style from './FavoriteEmpty.module.scss'
 
-export default function FavoriteEmpty() {
+export const FavoriteEmpty = () => {
   return (
     <div className={style.container}>
       <img className={style.icon} src={icon} alt='' />

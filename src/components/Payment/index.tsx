@@ -3,7 +3,7 @@ import { CgDollar } from 'react-icons/cg'
 import style from './Payment.module.scss'
 import usePayment from './usePayment'
 
-export default function Payment() {
+export const Payment = () => {
   const [totalPrice, productsQuantity, handleResetCart] = usePayment()
 
   return (

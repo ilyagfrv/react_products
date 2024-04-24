@@ -6,7 +6,7 @@ import lemon from 'assets/icons/lemon.svg'
 import style from './Header.module.scss'
 import useHeader from './useHeader'
 
-export default function Header() {
+export const Header = () => {
   const [totalPrice, cartProductQuantity, favoriteProductQuantity] = useHeader()
 
   return (

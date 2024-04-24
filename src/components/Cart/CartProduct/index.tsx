@@ -6,7 +6,7 @@ import style from './CartProduct.module.scss'
 import { SimplifiedProductType } from 'types'
 import useCartProduct from './useCartProduct'
 
-export default function CartProduct(product: SimplifiedProductType) {
+export const CartProduct = (product: SimplifiedProductType) => {
   const { id, image, title, price, weight, count } = product
   const [
     favoriteProduct,

@@ -1,8 +1,8 @@
 import style from './Cards.module.scss'
-import { Card, CardLoader, Error, Scroll } from 'components'
+import { Card, CardLoader, Error } from 'components'
 import useCards from './useCards'
 
-export default function Cards() {
+export const Cards = () => {
   const [status, filteredCards] = useCards()
 
   const skeletons = [...new Array(8)].map((_, index) => (

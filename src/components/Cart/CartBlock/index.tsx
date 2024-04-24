@@ -2,7 +2,7 @@ import style from './CartBlock.module.scss'
 import { CartProduct, Payment } from 'components'
 import useCart from './useCart'
 
-export default function CartBlock() {
+export const CartBlock = () => {
   const [products] = useCart()
 
   return (
